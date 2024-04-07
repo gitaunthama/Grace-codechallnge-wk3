@@ -96,4 +96,20 @@ function handleBuyTicket(e) {
         e.target.textContent = "Sold Out";
     }
 }
+// Delete a movie from the server
+function deleteMovie(movieId) {
+    fetch(`${url}/${movieId}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`Movie with ID ${movieId} deleted successfully.`);
+        } else {
+            console.error(`Failed to delete movie with ID ${movieId}.`);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
