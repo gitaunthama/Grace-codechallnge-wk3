@@ -112,4 +112,3 @@ function deleteMovie(movieId) {
         console.error('Error:', error);
     });
 }
-
